@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -22,5 +23,11 @@ export default defineConfig({
     sourcemap: !!process.env.TAURI_DEBUG,
   },
 
-  plugins: [vue()]
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
+
+  plugins: [vue()],
 })

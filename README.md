@@ -2,6 +2,12 @@
 
 (🧪 WIP) Vite + Vue Starter for [Tauri](https://tauri.app/).
 
+## Prerequisites
+
+> Windows/macOS/Linux require different environments, but [Rust](https://www.rust-lang.org/) and [Node.JS](https://nodejs.org/) are needed.
+
+More info see [Prerequisites | Tauri](https://tauri.app/v1/guides/getting-started/prerequisites).
+
 ## Try
 
 ### GitHub Template
