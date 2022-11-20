@@ -2,6 +2,8 @@
 
 (🧪 WIP) Vite + Vue Starter for [Tauri](https://tauri.app/).
 
+> Preview: <https://tauri-vite-vue.pages.dev/>
+
 ## Prerequisites
 
 > Windows/macOS/Linux require different environments, but [Rust](https://www.rust-lang.org/) and [Node.JS](https://nodejs.org/) are needed.
@@ -52,7 +54,7 @@ pnpm tauri dev
 ### Build
 
 ```bash
-# Build Tauri App, find it in 
+# Build Tauri App, find it below
 pnpm tauri build
 
 # You can use `pnpm build` to build website.
