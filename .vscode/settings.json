@@ -1,0 +1,31 @@
+{
+  "cSpell.words": [
+    "iconify",
+    "pinia",
+    "pnpm",
+    "tauri",
+    "unocss",
+    "unplugin",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vueuse"
+  ],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": false,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer", // Makes the magic
+    "editor.formatOnSave": true // Optional
+  }
+}

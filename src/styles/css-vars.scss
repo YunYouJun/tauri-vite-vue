@@ -1,0 +1,11 @@
+:root {
+  --c-bg: #fff;
+  --c-bg-alt: #f5f5f5;
+  --c-text: #000;
+}
+
+html.dark {
+  --c-bg: #000;
+  --c-bg-alt: #1a1a1a;
+  --c-text: #fff;
+}
