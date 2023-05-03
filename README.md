@@ -70,7 +70,7 @@ Try GitHub Actions! (Todo)
 
 ## Todo
 
-- [ ] Release by GitHub Actions
+- [ ] Release by GitHub Actions [tauri-apps/tauri-action](https://github.com/tauri-apps/tauri-action#creating-a-release-and-uploading-the-tauri-bundles)
 - [ ] ...
 
 ## Thanks
