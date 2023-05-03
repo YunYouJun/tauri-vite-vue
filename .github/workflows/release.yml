@@ -1,9 +1,10 @@
 # https://github.com/tauri-apps/tauri-action#creating-a-release-and-uploading-the-tauri-bundles
 name: 'publish'
+
 on:
   push:
-    branches:
-      - release
+    tags:
+      - 'v*'
 
 jobs:
   publish-tauri:
