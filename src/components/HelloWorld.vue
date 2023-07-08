@@ -1,20 +1,10 @@
 <script setup lang="ts">
-import type { FileEntry } from '@tauri-apps/api/fs'
-import { ref } from 'vue'
 import { useAppStore } from '~/stores/app'
-import { getFolderEntries, openFolderDialog } from '~/tauri'
+import { openFolder } from '~/api'
 
 defineProps<{ msg: string }>()
 
 const app = useAppStore()
-
-const folderEntries = ref<FileEntry[]>([])
-
-async function openFolder() {
-  app.folderPath = await openFolderDialog()
-
-  folderEntries.value = await getFolderEntries(app.folderPath)
-}
 </script>
 
 <template>
@@ -38,7 +28,7 @@ async function openFolder() {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="entry in folderEntries" :key="entry.path">
+        <tr v-for="entry in app.folderEntries" :key="entry.path">
           <td>{{ entry.name }}</td>
           <td>
             <code text="xs" bg="gray-50 dark:dark-500" p="x-2 y-1" rounded>
