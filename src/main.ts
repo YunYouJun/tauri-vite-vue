@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
+
+import { routes } from 'vue-router/auto-routes'
+
 import App from './App.vue'
 import type { UserModule } from '~/types'
 
@@ -11,13 +14,9 @@ import './styles/main.css'
 import './styles/index.scss'
 import 'uno.css'
 
-// router
-import generatedRoutes from '~pages'
-
-const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes: setupLayouts(routes),
 })
 
 const app = createApp(App)
