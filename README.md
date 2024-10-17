@@ -52,6 +52,23 @@ pnpm dev
 pnpm tauri dev
 ```
 
+#### Android
+
+```bash
+# https://tauri.app/start/prerequisites/#android
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+# custom
+# export JAVA_HOME="/Users/yunyou/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+
+rustup target add aarch64-linux-android armv7-linux-androideabi i686-linux-android x86_64-linux-android
+
+# dev
+pnpm tauri android init
+pnpm tauri android dev
+```
+
 #### iOS
 
 ```bash
