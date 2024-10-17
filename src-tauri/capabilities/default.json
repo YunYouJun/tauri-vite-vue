@@ -4,12 +4,18 @@
   "description": "Capability for the main window",
   "windows": ["main"],
   "permissions": [
+    "core:app:allow-default-window-icon",
+
+    "core:window:allow-close",
+    "core:window:allow-hide",
+    "core:window:allow-maximize",
+    "core:window:allow-minimize",
+    "core:window:allow-set-fullscreen",
+
     "core:default",
     "core:menu:allow-new",
-    "core:tray:allow-new",
-    "core:tray:allow-set-icon",
-    "core:tray:allow-set-menu",
-    "core:tray:allow-set-show-menu-on-left-click",
+    "core:tray:default",
+
     "dialog:default",
     "fs:default",
     "shell:allow-open"

@@ -5,5 +5,5 @@ export * from './dialog'
 
 export async function init() {
   await initMenu()
-  // await initTrayMenu()
+  await initTrayMenu()
 }

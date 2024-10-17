@@ -5,6 +5,7 @@ import { Menu, PredefinedMenuItem, Submenu } from '@tauri-apps/api/menu'
 import { getCurrentWindow } from '@tauri-apps/api/window'
 
 import consola from 'consola'
+import { defaultWindowIcon } from '@tauri-apps/api/app'
 import { openFolder } from '../api'
 
 import pkg from '../../package.json'
@@ -144,6 +145,7 @@ export async function initTrayMenu() {
   })
 
   const trayIconOptions: TrayIconOptions = {
+    icon: await defaultWindowIcon() || '',
     tooltip: 'awesome tauri app',
     menu: trayMenu,
     menuOnLeftClick: true,
