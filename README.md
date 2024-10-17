@@ -44,11 +44,22 @@ And, enjoy :)
 ### Development
 
 ```bash
-# run it and visit http://localhost:5173
+# run it and visit http://localhost:1420
 pnpm dev
 
 # run it in tauri
+# RUST_BACKTRACE=1 pnpm tauri dev
 pnpm tauri dev
+```
+
+#### iOS
+
+```bash
+# fist
+pnpm tauri ios init
+
+# run
+pnpm tauri ios dev
 ```
 
 ### Build

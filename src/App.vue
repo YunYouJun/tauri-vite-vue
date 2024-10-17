@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { listenMenuEvent } from './tauri'
+import { init } from './tauri'
 
-onMounted(() => {
-  listenMenuEvent()
+// init
+onMounted(async () => {
+  await init()
 })
 </script>
 

@@ -1,10 +1,10 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { FileEntry } from '@tauri-apps/api/fs'
+import type { DirEntry } from '@tauri-apps/plugin-fs'
 
 export const useAppStore = defineStore('app', () => {
   const folderPath = ref('')
-  const folderEntries = ref<FileEntry[]>([])
+  const folderEntries = ref<DirEntry[]>([])
 
   return {
     folderPath,

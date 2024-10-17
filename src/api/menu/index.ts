@@ -4,6 +4,6 @@ import { getFolderEntries, openFolderDialog } from '~/tauri'
 export async function openFolder() {
   const app = useAppStore()
 
-  app.folderPath = await openFolderDialog()
+  app.folderPath = (await openFolderDialog() || '')
   app.folderEntries = await getFolderEntries(app.folderPath)
 }

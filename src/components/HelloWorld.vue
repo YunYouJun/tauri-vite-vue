@@ -28,11 +28,11 @@ const app = useAppStore()
         </tr>
       </thead>
       <tbody>
-        <tr v-for="entry in app.folderEntries" :key="entry.path">
+        <tr v-for="entry in app.folderEntries" :key="entry.name">
           <td>{{ entry.name }}</td>
           <td>
             <code text="xs" bg="gray-50 dark:dark-500" p="x-2 y-1" rounded>
-              {{ entry.path }}
+              {{ entry.name }}
             </code>
           </td>
         </tr>

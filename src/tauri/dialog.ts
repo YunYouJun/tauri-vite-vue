@@ -1,12 +1,11 @@
-import { dialog } from '@tauri-apps/api'
+import { open } from '@tauri-apps/plugin-dialog'
 
 // Open a file dialog
 export async function openFolderDialog() {
-  const folderPath = await dialog.open({
+  const folderPath = await open({
     // default use last path
     title: 'Please select a folder',
     directory: true,
-  }) as string
-
+  })
   return folderPath
 }

@@ -3,7 +3,6 @@ import process from 'node:process'
 import { defineConfig } from 'vite'
 
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import Unocss from 'unocss/vite'
@@ -16,13 +15,30 @@ import Shiki from 'markdown-it-shiki'
 
 import AutoImport from 'unplugin-auto-import/vite'
 
+import VueRouter from 'unplugin-vue-router/vite'
+
+const host = process.env.TAURI_DEV_HOST
+
 // https://vitejs.dev/config/
 export default defineConfig({
   // prevent vite from obscuring rust errors
   clearScreen: false,
   // Tauri expects a fixed port, fail if that port is not available
   server: {
+    port: 1420,
     strictPort: true,
+    host: host || false,
+    hmr: host
+      ? {
+          protocol: 'ws',
+          host,
+          port: 1421,
+        }
+      : undefined,
+    watch: {
+    // 3. tell vite to ignore watching `src-tauri`
+      ignored: ['**/src-tauri/**'],
+    },
   },
   // to make use of `TAURI_PLATFORM`, `TAURI_ARCH`, `TAURI_FAMILY`,
   // `TAURI_PLATFORM_VERSION`, `TAURI_PLATFORM_TYPE` and `TAURI_DEBUG`
@@ -37,6 +53,14 @@ export default defineConfig({
     sourcemap: !!process.env.TAURI_DEBUG,
   },
 
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
+
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -46,12 +70,12 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      dts: 'src/typed-router.d.ts',
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

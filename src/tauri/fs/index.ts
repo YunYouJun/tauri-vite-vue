@@ -1,11 +1,11 @@
-import type { FileEntry } from '@tauri-apps/api/fs'
-import { readDir } from '@tauri-apps/api/fs'
+import type { DirEntry } from '@tauri-apps/plugin-fs'
+import { readDir } from '@tauri-apps/plugin-fs'
 
 export async function getFolderEntries(folderPath: string) {
   if (!folderPath)
     return []
 
-  let entries: FileEntry[] = []
+  let entries: DirEntry[] = []
   try {
     entries = await readDir(folderPath, {
       // recursive: true,

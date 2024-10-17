@@ -1,29 +1,33 @@
 [package]
-name = "app"
+name = "tauri-app"
 version = "0.1.0"
 description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
-default-run = "app"
+authors = [ "YunYouJun" ]
 edition = "2021"
-rust-version = "1.57"
+license = "MIT"
+repository = ""
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
 [build-dependencies]
-tauri-build = { version = "1.0.4", features = [] }
+tauri-build = { version = "2", features = [] }
 
 [dependencies]
-serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.0.5", features = ["api-all"] }
 chrono = "0.4.26"
-
-[features]
-# by default Tauri runs in production mode
-# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
-default = ["custom-protocol"]
-# this feature is used used for production builds where `devPath` points to the filesystem
-# DO NOT remove this
-custom-protocol = ["tauri/custom-protocol"]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tauri-plugin-cli = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-positioner = "2"
+tauri-plugin-process = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-updater = "2"
