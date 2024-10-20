@@ -6,7 +6,6 @@ import { createHead } from '@vueuse/head'
 import { routes } from 'vue-router/auto-routes'
 
 import App from './App.vue'
-// import { initMenu, initTrayMenu } from './tauri/menu'
 import type { UserModule } from '~/types'
 
 import '@unocss/reset/tailwind.css'

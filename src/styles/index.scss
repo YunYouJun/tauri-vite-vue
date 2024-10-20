@@ -4,13 +4,15 @@ body {
 }
 
 .t-button {
+  color: white;
+  background-color: #646cff;
+
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--c-bg-alt);
   cursor: pointer;
   transition: border-color 0.25s;
 

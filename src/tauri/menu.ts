@@ -140,6 +140,9 @@ export async function initTrayMenu() {
       {
         id: 'quit',
         text: 'Quit',
+        action: () => {
+          getCurrentWindow().close()
+        },
       },
     ],
   })

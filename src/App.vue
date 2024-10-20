@@ -2,7 +2,7 @@
 import { init } from './tauri'
 
 // init
-onMounted(async () => {
+onBeforeMount(async () => {
   await init()
 })
 </script>

@@ -44,13 +44,4 @@ const app = useAppStore()
     Check out
     <a href="https://github.com/YunYouJun/tauri-vite-vue" target="_blank">tauri-vite-vue</a>, Tauri + Vue + Vite starter
   </p>
-  <p class="read-the-docs mt-4">
-    Click on the logos to learn more
-  </p>
 </template>
-
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
