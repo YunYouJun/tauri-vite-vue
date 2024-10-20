@@ -96,6 +96,27 @@ What to build Cross-Platform installer?
 
 Try GitHub Actions! (Todo)
 
+## FAQ
+
+### Android: packageInfo is null
+
+需为安卓 APK 签名。
+
+```bash
+keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+```
+
+```bash
+# /src-tauri/gen/android/keystore.properties
+storePassword=<password from previous step>
+keyPassword=<password from previous step>
+keyAlias=upload
+storeFile=<密钥存储文件的位置，例如 /Users/<user name>/upload-keystore.jks 或 C:\\Users\\<user name>\\upload-keystore.jks>
+```
+
+> [为应用签名](https://developer.android.com/studio/publish/app-signing?hl=zh-cn)
+> [安卓代码签名｜Tauri](https://tauri.app/zh-cn/distribute/signing/android/)
+
 ## Todo
 
 - [ ] Release by GitHub Actions [tauri-apps/tauri-action](https://github.com/tauri-apps/tauri-action#creating-a-release-and-uploading-the-tauri-bundles)
