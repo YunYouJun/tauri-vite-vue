@@ -4,7 +4,7 @@ import type { AboutMetadata } from '@tauri-apps/api/menu'
 import { Menu, PredefinedMenuItem, Submenu } from '@tauri-apps/api/menu'
 import { getCurrentWindow } from '@tauri-apps/api/window'
 
-import consola from 'consola'
+import { consola } from 'consola'
 import { defaultWindowIcon } from '@tauri-apps/api/app'
 import { openFolder } from '../api'
 

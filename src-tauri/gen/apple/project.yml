@@ -1,6 +1,6 @@
 name: tauri-app
 options:
-  bundleIdPrefix: com.tauri-app.app
+  bundleIdPrefix: cn.yunyoujun.tauri-vite-vue
   deploymentTarget:
     iOS: 13.0
 fileGroups: [../../src]
@@ -11,7 +11,7 @@ settingGroups:
   app:
     base:
       PRODUCT_NAME: tauri-app
-      PRODUCT_BUNDLE_IDENTIFIER: com.tauri-app.app
+      PRODUCT_BUNDLE_IDENTIFIER: cn.yunyoujun.tauri-vite-vue
 targetTemplates:
   app:
     type: application

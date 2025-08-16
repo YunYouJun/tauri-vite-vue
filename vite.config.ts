@@ -55,14 +55,6 @@ export default defineConfig({
     sourcemap: !!process.env.TAURI_DEBUG,
   },
 
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-      },
-    },
-  },
-
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,

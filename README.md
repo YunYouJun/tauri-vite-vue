@@ -72,6 +72,11 @@ pnpm tauri android dev
 #### iOS
 
 ```bash
+# .env
+APPLE_DEVELOPMENT_TEAM=YOUR_TEAM_ID
+```
+
+```bash
 # fist
 pnpm tauri ios init
 

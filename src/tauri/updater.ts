@@ -1,6 +1,6 @@
 import { check } from '@tauri-apps/plugin-updater'
 import { relaunch } from '@tauri-apps/plugin-process'
-import consola from 'consola'
+import { consola } from 'consola'
 
 const update = await check()
 if (update?.available) {
