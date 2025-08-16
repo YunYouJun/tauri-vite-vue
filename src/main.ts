@@ -1,12 +1,12 @@
-import { createApp } from 'vue'
-import { setupLayouts } from 'virtual:generated-layouts'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import type { UserModule } from '~/types'
 import { createHead } from '@vueuse/head'
+import { setupLayouts } from 'virtual:generated-layouts'
+import { createApp } from 'vue'
+
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { routes } from 'vue-router/auto-routes'
-
 import App from './App.vue'
-import type { UserModule } from '~/types'
 
 import '@unocss/reset/tailwind.css'
 import './styles/css-vars.scss'

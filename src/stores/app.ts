@@ -1,6 +1,6 @@
+import type { DirEntry } from '@tauri-apps/plugin-fs'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { DirEntry } from '@tauri-apps/plugin-fs'
 
 export const useAppStore = defineStore('app', () => {
   const inTauri = ref(false)

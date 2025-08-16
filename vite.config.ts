@@ -1,23 +1,23 @@
 import path from 'node:path'
 import process from 'node:process'
-import { defineConfig } from 'vite'
-
-import Vue from '@vitejs/plugin-vue'
-import Layouts from 'vite-plugin-vue-layouts'
-import Components from 'unplugin-vue-components/vite'
-import Unocss from 'unocss/vite'
-import Markdown from 'unplugin-vue-markdown/vite'
-import VueDevTools from 'vite-plugin-vue-devtools'
-
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 
-import LinkAttributes from 'markdown-it-link-attributes'
 import Shiki from '@shikijs/markdown-it'
-
+import Vue from '@vitejs/plugin-vue'
+import LinkAttributes from 'markdown-it-link-attributes'
+import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
-import VueRouter from 'unplugin-vue-router/vite'
+import Markdown from 'unplugin-vue-markdown/vite'
+
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import VueRouter from 'unplugin-vue-router/vite'
+
+import { defineConfig } from 'vite'
+
+import VueDevTools from 'vite-plugin-vue-devtools'
+import Layouts from 'vite-plugin-vue-layouts'
 
 const host = process.env.TAURI_DEV_HOST
 

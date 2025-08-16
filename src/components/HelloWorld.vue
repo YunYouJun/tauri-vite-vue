@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useAppStore } from '~/stores/app'
 import { openFolder } from '~/api'
+import { useAppStore } from '~/stores/app'
 
 defineProps<{ msg: string }>()
 

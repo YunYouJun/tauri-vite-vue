@@ -1,14 +1,14 @@
-import type { TrayIconOptions } from '@tauri-apps/api/tray'
-import { TrayIcon } from '@tauri-apps/api/tray'
 import type { AboutMetadata } from '@tauri-apps/api/menu'
-import { Menu, PredefinedMenuItem, Submenu } from '@tauri-apps/api/menu'
-import { getCurrentWindow } from '@tauri-apps/api/window'
-
-import { consola } from 'consola'
+import type { TrayIconOptions } from '@tauri-apps/api/tray'
 import { defaultWindowIcon } from '@tauri-apps/api/app'
-import { openFolder } from '../api'
+import { Menu, PredefinedMenuItem, Submenu } from '@tauri-apps/api/menu'
+import { TrayIcon } from '@tauri-apps/api/tray'
 
+import { getCurrentWindow } from '@tauri-apps/api/window'
+import { consola } from 'consola'
 import pkg from '../../package.json'
+
+import { openFolder } from '../api'
 
 const nowYear = new Date().getFullYear()
 
@@ -16,7 +16,7 @@ const nowYear = new Date().getFullYear()
  * init menu and tray
  */
 export async function initMenu() {
-  const _aboutMetadata: AboutMetadata = {
+  const aboutMetadata: AboutMetadata = {
     name: pkg.name,
     version: pkg.version,
     authors: [pkg.author.name],
@@ -115,6 +115,10 @@ export async function initMenu() {
   })
 
   menu.setAsAppMenu()
+
+  return {
+    aboutMetadata,
+  }
 }
 
 /**
