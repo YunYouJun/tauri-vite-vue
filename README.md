@@ -3,6 +3,7 @@
 (🧪 WIP) Vite + Vue Starter for [Tauri](https://tauri.app/).
 
 > Preview: <https://tauri-vite-vue.pages.dev/>
+> Docs: <>
 
 ## Prerequisites
 
@@ -70,6 +71,14 @@ pnpm tauri android dev
 ```
 
 #### iOS
+
+> [iOS | prerequisites | Tauri](https://tauri.app/start/prerequisites/#ios)
+
+```bash
+rustup target add aarch64-apple-ios x86_64-apple-ios aarch64-apple-ios-sim
+
+brew install cocoapods
+```
 
 ```bash
 # .env

@@ -5,15 +5,21 @@ import { useAppStore } from '~/stores/app'
 defineProps<{ msg: string }>()
 
 const app = useAppStore()
+
+const platform = import.meta.env.TAURI_ENV_PLATFORM
+const isDeskTop = computed(() => ['windows', 'darwin', 'linux'].includes(platform))
 </script>
 
 <template>
   <h1 font="bold">
-    {{ msg }}
+    {{ msg }}({{ platform }})!
   </h1>
 
-  <div class="card" text-center>
-    <button class="t-button mb-4" type="button" @click="openFolder">
+  <div v-if="isDeskTop" class="card" text-center>
+    <button
+      class="t-button mb-4" type="button"
+      @click="openFolder"
+    >
       Open Folder ...
     </button>
     <p font="bold black" text="lg" my="4">
