@@ -1,4 +1,4 @@
-/src/main/java/com/tauri_app/app/generated
+/src/main/java/cn/yunyoujun/tauri_vite_vue/generated
 /src/main/jniLibs/**/*.so
 /src/main/assets/tauri.conf.json
 /tauri.build.gradle.kts

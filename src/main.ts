@@ -1,5 +1,4 @@
 import type { UserModule } from '~/types'
-import { createHead } from '@vueuse/head'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createApp } from 'vue'
 
@@ -20,9 +19,6 @@ const router = createRouter({
 })
 
 const app = createApp(App)
-
-const head = createHead()
-app.use(head)
 
 // install all modules under `modules/`
 Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))

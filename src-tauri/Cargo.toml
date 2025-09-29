@@ -31,6 +31,7 @@ tauri = { version = "2", features = [ "tray-icon" ] }
 tauri-plugin-cli = "2"
 tauri-plugin-dialog = "2"
 tauri-plugin-fs = "2"
+tauri-plugin-http = "2"
 tauri-plugin-notification = "2"
 tauri-plugin-positioner = "2"
 tauri-plugin-process = "2"

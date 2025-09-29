@@ -42,17 +42,18 @@ export default defineConfig({
       ignored: ['**/src-tauri/**'],
     },
   },
-  // to make use of `TAURI_PLATFORM`, `TAURI_ARCH`, `TAURI_FAMILY`,
-  // `TAURI_PLATFORM_VERSION`, `TAURI_PLATFORM_TYPE` and `TAURI_DEBUG`
-  // env variables
-  envPrefix: ['VITE_', 'TAURI_'],
+  // Env variables starting with the item of `envPrefix` will be exposed in tauri's source code through `import.meta.env`.
+  envPrefix: ['VITE_', 'TAURI_ENV_*'],
   build: {
-    // Tauri supports es2021
-    target: ['es2021', 'chrome100', 'safari13'],
+    // Tauri uses Chromium on Windows and WebKit on macOS and Linux
+    target:
+      process.env.TAURI_ENV_PLATFORM === 'windows'
+        ? 'chrome105'
+        : 'safari13',
     // don't minify for debug builds
-    minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
+    minify: !process.env.TAURI_ENV_DEBUG ? 'esbuild' : false,
     // produce sourcemaps for debug builds
-    sourcemap: !!process.env.TAURI_DEBUG,
+    sourcemap: !!process.env.TAURI_ENV_DEBUG,
   },
 
   resolve: {
@@ -81,7 +82,6 @@ export default defineConfig({
         'vue',
         'vue-i18n',
         '@vueuse/core',
-        '@vueuse/head',
         VueRouterAutoImports,
         {
           // add any other imports you were relying on

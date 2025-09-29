@@ -50,6 +50,9 @@
       "certificateThumbprint": null,
       "digestAlgorithm": "sha256",
       "timestampUrl": ""
+    },
+    "iOS": {
+      "minimumSystemVersion": "13.0"
     }
   }
 }
