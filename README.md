@@ -53,6 +53,11 @@ pnpm dev
 pnpm tauri dev
 ```
 
+```bash
+# https://tauri.app/distribute/google-play/#changing-app-icon
+pnpm tauri icon /path/to/app-icon.png
+```
+
 #### Android
 
 ```bash
