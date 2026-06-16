@@ -8,7 +8,7 @@ const globalVars = computed<{
 }[]>(() => {
   return [
     {
-      name: 'window.__TAURI_INTERNALS__',
+      name: 'isTauri()',
       exists: appStore.inTauri,
     },
   ]
@@ -20,7 +20,7 @@ const globalVars = computed<{
     <a href="https://tauri.app/" target="_blank">
       <img src="../../src-tauri/icons/icon.png" class="logo tauri" alt="Tauri logo">
     </a>
-    <a href="https://vitejs.dev" target="_blank">
+    <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo">
     </a>
     <a href="https://vuejs.org/" target="_blank">

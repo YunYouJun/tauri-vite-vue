@@ -1,16 +1,13 @@
 import type { DirEntry } from '@tauri-apps/plugin-fs'
+import { isTauri } from '@tauri-apps/api/core'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 
 export const useAppStore = defineStore('app', () => {
-  const inTauri = ref(false)
+  const inTauri = shallowRef(isTauri())
 
-  const folderPath = ref('')
-  const folderEntries = ref<DirEntry[]>([])
-
-  onMounted(() => {
-    inTauri.value = typeof window.__TAURI_INTERNALS__ !== 'undefined'
-  })
+  const folderPath = shallowRef('')
+  const folderEntries = shallowRef<DirEntry[]>([])
 
   return {
     inTauri,

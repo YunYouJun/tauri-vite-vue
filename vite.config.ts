@@ -17,11 +17,10 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 
 import VueDevTools from 'vite-plugin-vue-devtools'
-import Layouts from 'vite-plugin-vue-layouts'
 
 const host = process.env.TAURI_DEV_HOST
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   // prevent vite from obscuring rust errors
   clearScreen: false,
@@ -72,9 +71,6 @@ export default defineConfig({
       extensions: ['.vue', '.md'],
       dts: 'src/typed-router.d.ts',
     }),
-
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({

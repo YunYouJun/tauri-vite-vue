@@ -9,7 +9,7 @@
 
 > Windows/macOS/Linux require different environments, but [Rust](https://www.rust-lang.org/) and [Node.JS](https://nodejs.org/) are needed.
 
-More info see [Prerequisites | Tauri](https://tauri.app/v1/guides/getting-started/prerequisites).
+More info see [Prerequisites | Tauri](https://v2.tauri.app/start/prerequisites/).
 
 ## Try
 
@@ -111,9 +111,16 @@ pnpm tauri build
 - macOS `.dmg`: `src-tauri/target/release/bundle/dmg` (only be created on macOS)
 - Linux(Debian) `.deb`: `src-tauri/target/release` (only be created on Linux)
 
-What to build Cross-Platform installer?
+### Release
 
-Try GitHub Actions! (Todo)
+The release workflow in `.github/workflows/release.yml` builds Windows, Linux, macOS Intel, and macOS Apple Silicon bundles, then uploads them to a draft GitHub Release.
+
+Push a version tag to trigger it:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
 
 ## FAQ
 
@@ -135,11 +142,6 @@ storeFile=<密钥存储文件的位置，例如 /Users/<user name>/upload-keysto
 
 > [为应用签名](https://developer.android.com/studio/publish/app-signing?hl=zh-cn)
 > [安卓代码签名｜Tauri](https://tauri.app/zh-cn/distribute/signing/android/)
-
-## Todo
-
-- [ ] Release by GitHub Actions [tauri-apps/tauri-action](https://github.com/tauri-apps/tauri-action#creating-a-release-and-uploading-the-tauri-bundles)
-- [ ] ...
 
 ## Thanks
 

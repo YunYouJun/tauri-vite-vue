@@ -16,6 +16,7 @@ const nowYear = new Date().getFullYear()
  * init menu and tray
  */
 export async function initMenu() {
+  const currentWindow = getCurrentWindow()
   const aboutMetadata: AboutMetadata = {
     name: pkg.name,
     version: pkg.version,
@@ -71,36 +72,36 @@ export async function initMenu() {
         id: 'minimize',
         text: 'Minimize',
         action: () => {
-          getCurrentWindow().minimize()
+          currentWindow.minimize()
         },
       },
       {
         id: 'maximize',
         text: 'Maximize',
         action: () => {
-          getCurrentWindow().maximize()
+          currentWindow.maximize()
         },
       },
       {
         id: 'toggle-fullscreen',
         text: 'Toggle Fullscreen',
         action: async () => {
-          const isFullscreen = await getCurrentWindow().isFullscreen()
-          getCurrentWindow().setFullscreen(isFullscreen)
+          const isFullscreen = await currentWindow.isFullscreen()
+          await currentWindow.setFullscreen(!isFullscreen)
         },
       },
       {
         id: 'hide',
         text: 'Hide',
         action: () => {
-          getCurrentWindow().hide()
+          currentWindow.hide()
         },
       },
       {
         id: 'close',
         text: 'Close',
         action: () => {
-          getCurrentWindow().close()
+          currentWindow.close()
         },
       },
     ],
@@ -114,7 +115,7 @@ export async function initMenu() {
     ],
   })
 
-  menu.setAsAppMenu()
+  await menu.setAsAppMenu()
 
   return {
     aboutMetadata,
@@ -125,6 +126,7 @@ export async function initMenu() {
  * init tray menu
  */
 export async function initTrayMenu() {
+  const currentWindow = getCurrentWindow()
   // 托盘菜单
   const trayMenu = await Menu.new({
     items: [
@@ -145,17 +147,18 @@ export async function initTrayMenu() {
         id: 'quit',
         text: 'Quit',
         action: () => {
-          getCurrentWindow().close()
+          currentWindow.close()
         },
       },
     ],
   })
 
+  const icon = await defaultWindowIcon()
   const trayIconOptions: TrayIconOptions = {
-    icon: await defaultWindowIcon() || '',
+    ...(icon ? { icon } : {}),
     tooltip: 'awesome tauri app',
     menu: trayMenu,
-    menuOnLeftClick: true,
+    showMenuOnLeftClick: true,
     action: (event) => {
       switch (event.type) {
         case 'Click':

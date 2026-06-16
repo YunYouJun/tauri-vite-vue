@@ -11,7 +11,25 @@
   },
   "app": {
     "security": {
-      "csp": null
+      "capabilities": [
+        "default"
+      ],
+      "csp": {
+        "default-src": "'self' customprotocol: asset:",
+        "connect-src": "ipc: http://ipc.localhost",
+        "font-src": "'self' data:",
+        "img-src": "'self' asset: http://asset.localhost blob: data:",
+        "script-src": "'self'",
+        "style-src": "'self' 'unsafe-inline'"
+      },
+      "devCsp": {
+        "default-src": "'self' customprotocol: asset: http://localhost:* http://127.0.0.1:*",
+        "connect-src": "ipc: http://ipc.localhost http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:*",
+        "font-src": "'self' data: http://localhost:* http://127.0.0.1:*",
+        "img-src": "'self' asset: http://asset.localhost blob: data: http://localhost:* http://127.0.0.1:*",
+        "script-src": "'self' 'unsafe-eval' http://localhost:* http://127.0.0.1:*",
+        "style-src": "'self' 'unsafe-inline' http://localhost:* http://127.0.0.1:*"
+      }
     },
     "windows": [
       {
@@ -41,7 +59,7 @@
       "exceptionDomain": "",
       "frameworks": [],
       "providerShortName": null,
-      "signingIdentity": null
+      "signingIdentity": "-"
     },
     "resources": [],
     "shortDescription": "",

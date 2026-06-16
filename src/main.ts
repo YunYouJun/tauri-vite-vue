@@ -1,5 +1,4 @@
 import type { UserModule } from '~/types'
-import { setupLayouts } from 'virtual:generated-layouts'
 import { createApp } from 'vue'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -15,7 +14,7 @@ import 'uno.css'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: setupLayouts(routes),
+  routes,
 })
 
 const app = createApp(App)
